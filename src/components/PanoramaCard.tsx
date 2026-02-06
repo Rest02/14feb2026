@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Lock, Check, Calendar, MapPin, Gift, Utensils } from "lucide-react";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import Link from "next/link";
 import { DayStatus } from "@/lib/useUnlockStatus";
 
 interface PanoramaCardProps {
@@ -92,12 +93,14 @@ export function PanoramaCard({
                 {/* Action Button */}
                 {!isLocked && href && (
                     <div className="pt-4">
-                        <a
-                            href={href}
-                            className="inline-flex items-center justify-center px-6 py-3 bg-wine text-white rounded-full font-medium transition-transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg"
-                        >
-                            Ver detalles
-                        </a>
+                        <div className="pt-4">
+                            <Link
+                                href={href}
+                                className="inline-flex items-center justify-center px-6 py-3 bg-wine text-white rounded-full font-medium transition-transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg"
+                            >
+                                Ver detalles
+                            </Link>
+                        </div>
                     </div>
                 )}
             </div>
