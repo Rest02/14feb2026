@@ -99,7 +99,7 @@ export default function DinnerPage() {
                     <div className="bg-white p-2 rounded-2xl shadow-lg h-[600px] border border-gray-200">
                         {/* PDF Viewer using iframe */}
                         <iframe
-                            src="/menu.pdf"
+                            src="/14feb2026/menu.pdf"
                             className="w-full h-full rounded-xl"
                             title="Menú del Restaurante"
                         />
