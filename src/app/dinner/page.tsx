@@ -96,13 +96,36 @@ export default function DinnerPage() {
                         <div className="h-px bg-wine/20 flex-1" />
                     </div>
 
-                    <div className="bg-white p-2 rounded-2xl shadow-lg h-[600px] border border-gray-200">
-                        {/* PDF Viewer using iframe */}
-                        <iframe
-                            src="/14feb2026/menu.pdf"
-                            className="w-full h-full rounded-xl"
-                            title="Menú del Restaurante"
-                        />
+                    {/* Mobile optimized PDF action */}
+                    <div className="flex flex-col items-center gap-4">
+                        <div className="bg-white p-2 rounded-2xl shadow-lg w-full h-[500px] md:h-[600px] border border-gray-200 overflow-hidden relative">
+                            <iframe
+                                src="/14feb2026/menu.pdf"
+                                className="w-full h-full rounded-xl"
+                                title="Menú del Restaurante"
+                            />
+                            {/* Overlay for mobile to encourage clicking the button if iframe is wonky */}
+                            <div className="absolute inset-0 bg-transparent md:hidden pointer-events-none" />
+                        </div>
+
+                        <a
+                            href="/14feb2026/menu.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-dark text-white rounded-full font-medium shadow-md md:hidden animate-pulse"
+                        >
+                            <span>📄</span>
+                            Abrir Menú Completo (PDF)
+                        </a>
+
+                        <a
+                            href="/14feb2026/menu.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hidden md:inline-flex items-center gap-2 text-wine hover:underline text-sm"
+                        >
+                            Descargar o ver en otra pestaña
+                        </a>
                     </div>
                 </motion.div>
             </div>
