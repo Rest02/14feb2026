@@ -112,10 +112,9 @@ export default function DinnerPage() {
                             href="/14feb2026/menu.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-dark text-white rounded-full font-medium shadow-md md:hidden animate-pulse"
+                            className="inline-flex items-center justify-center px-6 py-3 bg-gray-dark text-white rounded-full font-medium shadow-md md:hidden"
                         >
-                            <span>📄</span>
-                            Abrir Menú Completo (PDF)
+                            Abrir menú
                         </a>
 
                         <a
