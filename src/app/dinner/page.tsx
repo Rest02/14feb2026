@@ -3,6 +3,17 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, Clock, MapPin, Shirt, Utensils } from "lucide-react";
 import Link from "next/link";
+import MenuCarousel from "@/components/MenuCarousel";
+
+const MENU_IMAGES = [
+    "/14feb2026/menu_1.jpg",
+    "/14feb2026/menu_2.jpg",
+    "/14feb2026/menu_3.jpg",
+    "/14feb2026/menu_4.jpg",
+    "/14feb2026/menu_5.jpg",
+    "/14feb2026/menu_6.jpg",
+    "/14feb2026/menu_7.jpg",
+];
 
 export default function DinnerPage() {
     return (
@@ -26,7 +37,7 @@ export default function DinnerPage() {
                     className="text-center space-y-4"
                 >
                     <h1 className="text-4xl md:text-6xl font-serif font-bold text-gray-dark">
-                        La Pasta de la Nona
+                        Pastas Verona
                     </h1>
                     <p className="text-xl text-wine font-serif italic">
                         "Donde el amor se cocina a fuego lento"
@@ -45,7 +56,7 @@ export default function DinnerPage() {
                             <Clock className="w-5 h-5" />
                         </div>
                         <h3 className="font-serif font-bold text-lg">Hora de la cita</h3>
-                        <p className="text-gray-600">19:00 hrs</p>
+                        <p className="text-gray-600">19:15 hrs</p>
                     </div>
 
                     <div className="bg-white p-6 rounded-2xl shadow-sm border border-wine/10 flex flex-col items-center text-center gap-3">
@@ -72,18 +83,27 @@ export default function DinnerPage() {
                     transition={{ delay: 0.4 }}
                     className="bg-white p-8 md:p-12 rounded-3xl shadow-md border-2 border-wine/20 text-center space-y-6"
                 >
-                    <h2 className="text-3xl font-serif text-wine font-bold">¿Por qué pasta, mi amor?</h2>
+                    <h2 className="text-3xl font-serif text-wine font-bold">
+                        ¿Por qué pasta?
+                    </h2>
+
                     <div className="space-y-4 text-gray-600 leading-relaxed text-lg max-w-2xl mx-auto">
                         <p>
-                            Dicen que la pasta es como el amor: necesita tiempo, paciencia y los ingredientes correctos para ser perfecta. No es solo harina y huevo, es el arte de unir elementos simples para crear algo extraordinario.
+                            Porque la pasta, al igual que el amor verdadero, no se apura. Se prepara con calma,
+                            se cuida en cada paso y se disfruta sin prisas. No es solo una comida, es una forma
+                            de decir “quédate un rato más”.
                         </p>
+
                         <p>
-                            Igual que en nuestra historia, cada forma de pasta tiene su propósito, cada salsa su compañero ideal. Esta noche quiero que nos envolvamos en ese calor de hogar, en la tradición de compartir un plato hecho con el corazón, y brindar por nosotros, que somos la receta perfecta.
+                            Cada forma tiene su encanto y cada salsa su momento. Esta noche quiero que nos
+                            regalemos una pausa, una mesa compartida y un plato preparado con cariño, para
+                            disfrutar simplemente de estar juntos.
                         </p>
                     </div>
+
                 </motion.div>
 
-                {/* PDF Menu Section */}
+                {/* Menu Carousel Section */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -96,38 +116,10 @@ export default function DinnerPage() {
                         <div className="h-px bg-wine/20 flex-1" />
                     </div>
 
-                    {/* Mobile optimized PDF action */}
-                    <div className="flex flex-col items-center gap-4">
-                        <div className="bg-white p-2 rounded-2xl shadow-lg w-full h-[500px] md:h-[600px] border border-gray-200 overflow-hidden relative">
-                            <iframe
-                                src="/14feb2026/menu.pdf"
-                                className="w-full h-full rounded-xl"
-                                title="Menú del Restaurante"
-                            />
-                            {/* Overlay for mobile to encourage clicking the button if iframe is wonky */}
-                            <div className="absolute inset-0 bg-transparent md:hidden pointer-events-none" />
-                        </div>
-
-                        <a
-                            href="/14feb2026/menu.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center px-6 py-3 bg-gray-dark text-white rounded-full font-medium shadow-md md:hidden"
-                        >
-                            Abrir menú
-                        </a>
-
-                        <a
-                            href="/14feb2026/menu.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hidden md:inline-flex items-center gap-2 text-wine hover:underline text-sm"
-                        >
-                            Descargar o ver en otra pestaña
-                        </a>
-                    </div>
+                    <MenuCarousel images={MENU_IMAGES} />
                 </motion.div>
             </div>
         </main>
     );
 }
+
