@@ -22,6 +22,7 @@ export default function Home() {
       dateStr: "Jueves 12",
       iconType: "cabin" as const,
       status: day2,
+      href: "/cabin",
     },
     {
       title: "Sorpresas de San Valentín",
@@ -36,7 +37,7 @@ export default function Home() {
     <main className="min-h-screen pb-20 bg-cream">
       <Hero />
 
-      <div className="max-w-5xl mx-auto px-4 space-y-8 -mt-10 relative z-20">
+      <div className="max-w-5xl mx-auto px-4 space-y-8 mt-12 relative z-20">
         <div className="grid grid-cols-1 gap-8 md:gap-12">
           {panoramas.map((panorama, index) => (
             <div key={index} className="flex flex-col items-center">
@@ -59,7 +60,7 @@ export default function Home() {
         </div>
 
         <footer className="pt-20 text-center text-wine/40 text-sm font-serif italic">
-          Hecho con ❤️ para ti
+          Hecho con ❤️ para Pipa
         </footer>
       </div>
     </main>
