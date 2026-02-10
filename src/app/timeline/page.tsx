@@ -17,7 +17,7 @@ export default function Home() {
       href: "/dinner",
     },
     {
-      title: "Escapada a la Cabaña",
+      title: "Escapada al Domo",
       description: "Desconectar del mundo para conectar con nosotros. Un refugio acogedor, naturaleza y tranquilidad absoluta.",
       dateStr: "Jueves 12",
       iconType: "cabin" as const,
